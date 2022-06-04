@@ -32,6 +32,7 @@ contract matching {
     }
     function addPlayers(string memory _name, uint _id) external
     {
+    require(create == true,"first allow to match");
     require(allowtoadd [msg.sender] == true,"You Can not Add players ");
         playerscount++;
         addPlayer[playerscount]=player(_name,_id,msg.sender);
